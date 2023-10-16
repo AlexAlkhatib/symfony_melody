@@ -1,2 +1,2 @@
 # symfony_melody
-une application de musqie développée avec le framework Symfony
+une application de musique développée avec le framework Symfony
