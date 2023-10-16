@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ma Playlist{% endblock %}
+{% block body %}
+ <div class="container mt-4">
+    <h1>Mes Morceaux</h1>
+    
+ <table class="table table-hover">
+  <thead>
+    <tr>
+      {% if is_mobile() %}
+      <td scope="col" align="center" colspan="2"><b>{{ playlist.nomPlaylist }}</b></td>
+      {% else %}
+      <th scope="col" colspan="4">{{ playlist.nomPlaylist }}</th>
+      {% endif %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for morceau in playlist.morceauxid %}
+      {% if is_mobile() %}
+        {% if vich_uploader_asset(morceau, 'imageFile') is not null %}
+        <tr class="table-primary">
+          <td align="center" valign="middle" colspan="2"><img width="100px" src="{{vich_uploader_asset(morceau, 'imageFile')}}"/></td>
+        </tr>
+        {% endif %}
+        <tr class="table-primary">
+          <td align="center" valign="middle" width="50%">{{morceau.artiste}}</td>
+          <td align="center" valign="middle" width="50%">{{morceau.nomMorceaux}}</td>
+        </tr>
+        <tr class="table-primary">
+          <td colspan="3" align="center"><audio controls src="{{vich_uploader_asset(morceau, 'musicFile')}}"></audio></td>
+        </tr>
+      {% else %}
+        <tr class="table-primary">
+          <td align="center" valign="middle"><img width="50px" src="{{vich_uploader_asset(morceau, 'imageFile')}}"/></td>
+          <td align="center" valign="middle">{{morceau.artiste}}</td>
+          <td align="center" valign="middle">{{morceau.nomMorceaux}}</td>
+          <td align="center" valign="middle"><audio controls src="{{vich_uploader_asset(morceau, 'musicFile')}}"></audio></td>
+        </tr>
+      {% endif %}
+    {% endfor %}
+  </tbody>
+</table>
+ </div>
+{% endblock %}
+
+
+
+
+{# 
+{% extends 'base.html.twig' %}
+
+{% block title %}Playlist{% endblock %}
+
+{% block body %}
+    <h1>Ma Playlist</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ playlist.id }}</td>
+            </tr>
+            <tr>
+                <th>NomPlaylist</th>
+                <td>{{ playlist.nomPlaylist }}</td>
+            </tr>
+            <tr>
+                <th>NbMorceaux</th>
+                <td>{{ playlist.nbMorceaux }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}
+#}

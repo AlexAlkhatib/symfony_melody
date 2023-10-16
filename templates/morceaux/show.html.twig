@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Morceaux{% endblock %}
+
+{% block body %}
+    <h1>Morceaux</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ morceaux.id }}</td>
+            </tr>
+            <tr>
+                <th>NomMorceaux</th>
+                <td>{{ morceaux.nomMorceaux }}</td>
+            </tr>
+            <tr>
+                <th>DateSortie</th>
+                <td>{{ morceaux.dateSortie ? morceaux.dateSortie|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Artiste</th>
+                <td>{{ morceaux.artiste }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_morceaux_index') }}">back to list</a>
+
+    <a href="{{ path('app_morceaux_edit', {'id': morceaux.id}) }}">edit</a>
+
+    {{ include('morceaux/_delete_form.html.twig') }}
+{% endblock %}

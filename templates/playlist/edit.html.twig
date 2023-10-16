@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification d'une Playlist{% endblock %}
+
+{% block body %}
+    <h1>Modifier la Playlist</h1>
+
+    {{ include('playlist/_form.html.twig', {'button_label': 'Update'}) }}
+
+{% endblock %}

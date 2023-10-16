@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau Morceaux{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="mt-4">Création d'un morceau</h1>
+        {{ form_start(form)}}
+        
+            <div class="form-group">
+                {{ form_label(form.nomMorceaux)}}
+                {{ form_widget(form.nomMorceaux)}}
+                <div class="form-error">
+                    {{ form_errors(form.nomMorceaux)}}
+                </div>
+            </div>
+
+            <div class="form-group">
+                {{ form_label(form.dateSortie)}}
+                {{ form_widget(form.dateSortie)}}
+                <div class="form-error">
+                    {{ form_errors(form.dateSortie)}}
+                </div>
+            </div>
+
+            <div class="form-group">
+                {{ form_label(form.artiste)}}
+                {{ form_widget(form.artiste)}}
+                <div class="form-error">
+                    {{ form_errors(form.artiste)}}
+                </div>
+            </div>
+
+            <div class="form-group">
+                {{ form_label(form.genreid)}}
+                {{ form_widget(form.genreid)}}
+                <div class="form-error">
+                    {{ form_errors(form.genreid)}}
+                </div>
+            </div>
+
+            {{form_row(form.imageFile)}}
+            
+            {{form_row(form.musicFile)}}
+
+            <div class="form-group">
+                {{ form_row(form.submit) }}
+            </div>
+
+        {{ form_end(form)}}
+    </div>
+{% endblock %}

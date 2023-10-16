@@ -1,0 +1,14 @@
+vich_uploader:
+    db_driver: orm
+    metadata:
+        type: attribute
+
+    mappings:
+       album_image:
+           uri_prefix: /images
+           upload_destination: '%kernel.project_dir%/public/images'
+           namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+       morceau_musique:
+           uri_prefix: /morceaux
+           upload_destination: '%kernel.project_dir%/public/morceaux'
+           namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

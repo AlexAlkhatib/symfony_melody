@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+SymfonyMelody - Acceuil
+{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <div class="jumbotron">
+        <h1 class="display-4">Bienvenue sur SymfonyMelody</h1>
+        <p class="lead">SymfonyMelody est une application qui va te permettre de créer des playlists de musique, Tu auras la possibilité de partager tes playlists avec la communauté du site ou de les garder en privée.</p>
+        <hr class="my-4">
+        <p>Pour commencer, rendez-vous sur la page d'inscription ou connectez vous pour utiliser l'application.</p>
+        <a class="btn btn-primary btn-lg" href="/register" role="inscription">Inscription</a>
+        <a class="btn btn-primary btn-lg" href="/login" role="connexion">Connexion</a>
+      </div>
+</div>
+{% endblock %}
