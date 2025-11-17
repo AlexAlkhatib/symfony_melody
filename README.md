@@ -1,4 +1,4 @@
-# **Symfony Melody — Application musicale collaborative**
+# 🎵 **Symfony Melody — Application musicale collaborative**
 
 **Symfony Melody** est une application web collaborative permettant aux utilisateurs de **composer**, **partager** et **gérer des playlists musicales en ligne**.
 Ce projet a été réalisé dans un **cadre personnel**, afin d’approfondir le développement web moderne avec le framework **Symfony** et de comprendre la construction d’une application collaborative complète.
